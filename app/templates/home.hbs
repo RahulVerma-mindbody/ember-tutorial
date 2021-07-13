@@ -1,0 +1,9 @@
+<h1>List of Employees</h1>
+
+{{#each model as |emp index|}}
+  {{card-ui personDetails=emp index=index openModal=(action "openModalDetails")}}
+{{/each}}
+
+{{#if openModal}}
+  {{modal-ui personInfo=personInfo closeModal=(action "closeModal")}}
+{{/if}}
